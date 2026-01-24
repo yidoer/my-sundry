@@ -1,0 +1,82 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{equation*}
+   \left[
+    \begin{array}{l}
+    \text{$\Delta t $ 时间内越过 $z=z_0 $平面的} \\ [0.1pt]
+    \text{$\Delta A$面积向上输送的总动量}
+    \end{array}
+   \right]
+  =
+   \begin{array}{l}
+      \frac{1}{6} n\overline{v}\cdot mu_x(z_0-\overline{\lambda })\Delta A\Delta t 
+   \end{array}
+  \end{equation*}
+   \begin{equation*}
+   \left[
+    \begin{array}{l}
+    \text{$\Delta t $ 时间内越过 $z=z_0 $平面的} \\ [0.1pt]
+    \text{$\Delta A$面积向下输送的总动量}
+    \end{array}
+   \right]
+  =
+   \begin{array}{l}
+      \frac{1}{6} n\overline{v}\cdot mu_x(z_0+\overline{\lambda })\Delta A\Delta t 
+   \end{array}
+  \end{equation*}
+  $F= \frac{1}{6} n\overline{v}\cdot m[u_x(z_0-\overline{\lambda })-u_x(z_0-\overline{\lambda })]\Delta A\Delta t $
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+有两块温度分别为 $T_1$ 及 $T_2$ 的平行平板，平板间的距离 $L$ 比平板的线度小得多，其中充有平均自由程 $\bar{\lambda} \gg L$ 的气体。
+
+分子在来回碰撞于温度为 $T_1$ 及 $T_2$ 的器壁的同时，把热量从高温平板传到低温平板，这就是**稀薄气体中热传导**的机理。
+
+定义单位时间从单位面积平板上传递的能量为热流密度，则
+\begin{align*}
+[\text{热流密度}] = \left[\frac{\text{单位时间内碰撞在单位}}{\text{面积器壁上的分子数}}\right]
+\end{align*}
+\begin{align*}
+\times \left[\frac{\text{一个分子在不同温度器壁间来}}{\text{回碰撞一次所平均传递的能量}}\right]
+\end{align*}
+
+\hrule
+\vspace{1em} % 增加垂直间距
+
+\subsection*{$\S 3.8$ 稀薄气体中的输运过程}
+
+只要两器壁间的温度差 $\Delta T = T_1 - T_2 \ll T$，则分子与平板碰撞一次，其平均能量就变为 $ikT_1$ 或 $ikT_2$。
+$$
+J_t = -\frac{1}{6} n \bar{v} \cdot \frac{1}{2} ik(T_1 - T_2) - \frac{1}{6} n \bar{v} \cdot \frac{1}{N_A} C_{V, m} (T_1 - T_2)
+$$
+令
+$$
+J_t = -\kappa' \frac{(T_1 - T_2)}{L}
+$$
+则
+$$
+\kappa' = \frac{1}{6} n \bar{v} L \frac{C_{V, m}}{N_A} = \frac{1}{6} \rho \bar{v} L \frac{C_{V, m}}{M_m}
+$$
+$$
+\kappa' = \frac{1}{6} \rho \bar{v} \bar{\lambda} \frac{M_m}{M_m} \frac{C_{V, m}}{M_m}
+$$
+
+\hrule
+\vspace{1em} % 增加垂直间距
+
+\subsection*{$\S 3.8$ 稀薄气体中的输运过程}
+
+利用理想气体物态方程及平均速率公式，可得
+$$
+J_t = -\frac{1}{6} \frac{m p}{k T} \sqrt{\frac{8 k T}{\pi m}} (T_1 - T_2) \cdot \frac{C_{V, m}}{M_m}
+$$
+$$
+\longrightarrow J_t \propto p T^{-1/2} (T_1 - T_2)
+$$
+
+在温度一定的条件下，超高真空气体单位时间内在单位面积上传递的热量与压强成正比。
+
+\end{document}

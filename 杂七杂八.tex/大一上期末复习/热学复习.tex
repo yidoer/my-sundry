@@ -1,0 +1,423 @@
+\documentclass[12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\title{yidoer的热学期末复习资料}
+\author{by 元宝}
+\date{ }
+
+\begin{document}
+
+\maketitle
+
+%\tableofcontents
+
+\section*{前言}
+本资料基于信陽師範大学翟春洋老师的《热学》课程讲义（2025年10月-12月）整理，涵盖热学全部核心内容，包括基本概念、重要公式、图表及复习要点。资料按章节组织，力求全面系统，便于期末复习。
+
+\section{第一章：热学导论}
+\subsection{热学基本概念与研究方法}
+
+热现象与热运动
+\begin{itemize}
+    \item 热现象：与物体冷热程度相关的物理性质变化
+    \item 热运动：大量分子无规则运动的宏观体现
+\end{itemize}
+
+研究方法
+\begin{itemize}
+    \item 宏观描述（热力学方法）：基于实验定律
+    \item 微观描述（统计物理）：从分子运动出发
+\end{itemize}
+
+热力学系统分类
+\begin{itemize}
+    \item 孤立系统：无能量、物质交换
+    \item 封闭系统：有能量、无物质交换  
+    \item 开放系统：有能量、物质交换
+\end{itemize}
+
+\subsection{平衡态与非平衡态}
+平衡态条件
+\begin{itemize}
+    \item 热平衡：系统内部温度相等
+    \item 力学平衡：无宏观粒子流
+    \item 化学平衡：无相变发生
+\end{itemize}
+判断标准
+是否存在热流与粒子流
+
+\subsection{温度与热力学第零定律}
+温度定义
+分子热运动剧烈程度的量度
+
+热力学第零定律
+若A与B均与C热平衡，则A与B彼此热平衡
+
+温标建立
+\begin{align*}
+    T &= \lim_{p_{tr} \to 0} \left(273.16 \cdot \frac{p}{p_{tr}}\right) \, \text{K} \\
+    t_{90} &= \left(T_{90} - 273.15\right) \, ^\circ\text{C} \\
+    t_F &= \left(\frac{9}{5} \frac{t}{^\circ\text{C}} + 32\right) \, ^\circ\text{F}
+\end{align*}
+
+\subsection{物态方程}
+基本方程
+\begin{align*}
+    f(T, p, V) &= 0 \\
+    pV &= vRT \quad (\text{理想气体})
+\end{align*}
+
+系数定义
+\begin{align*}
+    \kappa_T &= -\frac{1}{V} \left(\frac{\partial V}{\partial p}\right)_T \quad \text{(等温压缩系数)} \\
+    \beta_p &= \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_p \quad \text{(体膨胀系数)} \\
+    \alpha_V &= \frac{1}{p} \left(\frac{\partial p}{\partial T}\right)_V \quad \text{(压强系数)} \\
+    p\alpha_V\kappa_T &= \beta_p
+\end{align*}
+
+混合理想气体
+\begin{align*}
+    pV &= (v_1 + v_2 + \cdots + v_n)RT \\
+    p &= p_1 + p_2 + \cdots + p_n \quad \text{(道尔顿分压定律)}
+\end{align*}
+
+\subsection{物质的微观模型}
+阿伏伽德罗常量
+\[
+N_A = 6.02 \times 10^{23} \, \text{mol}^{-1}
+\]
+
+分子力与分子热运动
+分子吸引力与排斥力平衡距离为$r_0$
+
+\subsection{理想气体微观描述的初级理论}
+微观模型假设
+\begin{itemize}
+    \item 分子线度远小于间距
+    \item 除碰撞外分子间无作用力  
+    \item 碰撞为完全弹性碰撞
+\end{itemize}
+
+重要公式
+\begin{align*}
+    n_0 &= \frac{N_A}{22.4 \times 10^{-3}} = 2.7 \times 10^{25} \, \text{m}^{-3} \\
+    \bar{\lambda} &= \frac{1}{\sqrt{2}n\sigma}, \quad \sigma = \pi d^2 \\
+    \bar{Z} &= \sqrt{2}n\bar{v}\sigma \\
+    \Gamma &= \frac{1}{6}n\bar{v} \\
+    p &= \frac{1}{3}nm\overline{v^2} = \frac{2}{3}n\overline{\varepsilon_t} \\
+    \overline{\varepsilon_t} &= \frac{3}{2}kT \\
+    v_{\text{rms}} &= \sqrt{\frac{3kT}{m}} = \sqrt{\frac{3RT}{M_m}} \\
+    p &= nkT
+\end{align*}
+
+\subsection{真实气体物态方程}
+范德瓦尔斯方程
+\[
+\left(p + \frac{a}{V_m^2}\right)(V_m - b) = RT
+\]
+
+昂内斯方程
+\[
+pV = A + \frac{B}{V} + \frac{C}{V^2} + \cdots
+\]
+
+\section{第二章：分子动理学理论的平衡态理论}
+\subsection{概率论基础}
+基本定义
+\begin{align*}
+    P_i &= \lim_{N \to \infty} \frac{N_i}{N} \\
+    \bar{u} &= \sum u_i P_i \\
+    \overline{(\Delta u)^2} &= \overline{u^2} - (\bar{u})^2
+\end{align*}
+
+\subsection{麦克斯韦速率分布}
+分布函数
+\[
+f(v)dv = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{mv^2}{2kT}} v^2 dv
+\]
+
+三种特征速率
+\begin{align*}
+    v_p &= \sqrt{\frac{2kT}{m}} \quad \text{(最概然速率)} \\
+    \bar{v} &= \sqrt{\frac{8kT}{\pi m}} \quad \text{(平均速率)} \\
+    v_{\text{rms}} &= \sqrt{\frac{3kT}{m}} \quad \text{(方均根速率)}
+\end{align*}
+
+\subsection{麦克斯韦速度分布}
+速度空间分布
+\[
+f(v_x, v_y, v_z)dv_x dv_y dv_z = \left(\frac{m}{2\pi kT}\right)^{3/2} e^{-\frac{m(v_x^2+v_y^2+v_z^2)}{2kT}} dv_x dv_y dv_z
+\]
+
+\subsection{玻尔兹曼分布}
+等温大气公式
+\begin{align*}
+    p(z) &= p(0)e^{-\frac{M_m g z}{RT}} \\
+    n(z) &= n(0)e^{-\frac{M_m g z}{RT}}
+\end{align*}
+
+玻尔兹曼分布
+\[
+\frac{N_1}{N_2} = e^{-\frac{\varepsilon_1 - \varepsilon_2}{kT}}
+\]
+
+\subsection{能量均分定理}
+自由度
+\begin{itemize}
+    \item 单原子分子：3个平动自由度
+    \item 刚性双原子分子：5个自由度（3平动+2转动）
+    \item 刚性多原子分子：6个自由度（3平动+3转动）
+\end{itemize}
+
+能量均分公式
+\begin{align*}
+    \bar{\varepsilon} &= \frac{i}{2}kT \\
+    U_m &= \frac{i}{2}RT \\
+    C_{V,m} &= \frac{i}{2}R \\
+    C_{p,m} &= C_{V,m} + R \\
+    C_{p,m} - C_{V,m} &= R \quad \text{(迈耶公式)}
+\end{align*}
+
+\section{第三章：输运现象与分子动理学理论的非平衡态理论}
+\subsection{黏性现象}
+牛顿黏性定律
+\begin{align*}
+    F &= -\eta \frac{du}{dz} A \\
+    J_p &= -\eta \frac{du}{dz}
+\end{align*}
+
+重要公式
+\begin{align*}
+    \frac{dV}{dt} &= \frac{\pi r^4 \Delta p}{8\eta L} \quad \text{(泊肃叶定律)} \\
+    f &= 6\pi\eta v R \quad \text{(斯托克斯定律)}
+\end{align*}
+
+\subsection{扩散现象}
+菲克定律
+\begin{align*}
+    J_N &= -D \frac{dn}{dz} \\
+    \frac{dM}{dt} &= -D \frac{d\rho}{dz} A
+\end{align*}
+
+\subsection{热传导现象}
+傅里叶定律
+\begin{align*}
+    \dot{Q} &= -\kappa \frac{dT}{dz} A \\
+    J_T &= -\kappa \frac{dT}{dz}
+\end{align*}
+
+热欧姆定律
+\begin{align*}
+    \Delta U_T &= R_T I_T \\
+    R_T &= \frac{L}{\kappa A}, \quad \rho_T = \frac{1}{\kappa}
+\end{align*}
+
+\subsection{分子平均自由程}
+碰撞参数
+\begin{align*}
+    \sigma &= \pi d^2 \\
+    \bar{Z} &= \sqrt{2}n\bar{v}\sigma \\
+    \bar{\lambda} &= \frac{\bar{v}}{\bar{Z}} = \frac{1}{\sqrt{2}n\sigma} \\
+    \bar{\lambda} &= \frac{kT}{\sqrt{2}\sigma p}
+\end{align*}
+
+\subsection{气体输运系数的导出}
+微观表达式
+\begin{align*}
+    \eta &= \frac{1}{3}\rho\bar{v}\bar{\lambda} = \frac{m\bar{v}}{3\sqrt{2}\sigma} \\
+    \kappa &= \frac{1}{3}\rho\bar{v}\bar{\lambda} \frac{C_{V,m}}{M_m} \\
+    D &= \frac{1}{3}\bar{v}\bar{\lambda}
+\end{align*}
+
+\section{第四章：热力学第一定律}
+\subsection{可逆与不可逆过程}
+准静态过程
+中间态均为平衡态的过程
+
+弛豫时间
+系统从非平衡态到平衡态所需时间
+
+\subsection{功和热量}
+体积功
+\begin{align*}
+    dW &= -p_edV \\
+    dW &= -pdV \quad \text{(准静态过程)} \\
+    W &= -\int_{V_1}^{V_2} pdV
+\end{align*}
+
+常见过程的功
+\begin{align*}
+    W &= -vRT\ln\frac{V_2}{V_1} \quad \text{(等温过程)} \\
+    W &= -p(V_2 - V_1) \quad \text{(等压过程)} \\
+    W &= 0 \quad \text{(等体过程)}
+\end{align*}
+
+\subsection{热力学第一定律}
+数学表达式
+\begin{align*}
+    \Delta U &= Q + W \\
+    dU &= dQ + dW
+\end{align*}
+
+内能定理
+绝热过程中 $\Delta U = W_{\text{绝热}}$
+
+\subsection{热容与焓}
+热容定义
+\begin{align*}
+    C_V &= \left(\frac{dQ}{dT}\right)_V, \quad C_{V,m} = \left(\frac{\partial U_m}{\partial T}\right)_V \\
+    C_p &= \left(\frac{dQ}{dT}\right)_p, \quad C_{p,m} = \left(\frac{\partial H_m}{\partial T}\right)_p
+\end{align*}
+
+焓的定义
+\begin{align*}
+    H &= U + pV \\
+    dH &= dU + pdV + Vdp
+\end{align*}
+
+\subsection{第一定律对理想气体的应用}
+内能与焓
+\begin{align*}
+    dU &= vC_{V,m}dT \\
+    dH &= vC_{p,m}dT
+\end{align*}
+
+过程方程
+\begin{align*}
+    pV &= \text{常量} \quad \text{(等温)} \\
+    pV^\gamma &= \text{常量} \quad \text{(绝热)} \\
+    pV^n &= \text{常量} \quad \text{(多方)}
+\end{align*}
+
+绝热过程功
+\[
+W_{\text{绝热}} = \frac{p_2V_2 - p_1V_1}{\gamma - 1} = \frac{vR}{\gamma - 1}(T_2 - T_1)
+\]
+
+多方过程
+\begin{align*}
+    W &= \frac{vR}{n-1}(T_2 - T_1) \\
+    C_{n,m} &= C_{V,m} \frac{\gamma - n}{1 - n}
+\end{align*}
+
+\subsection{热机与循环}
+热机效率
+\[
+\eta = \frac{W'}{Q_1} = 1 - \frac{|Q_2|}{Q_1}
+\]
+
+卡诺热机效率
+\[
+\eta_{\text{卡}} = 1 - \frac{T_2}{T_1}
+\]
+
+内燃机循环
+\begin{align*}
+    \eta &= 1 - \left(\frac{V_1}{V_2}\right)^{1-\gamma} \quad \text{(奥托循环)} \\
+    \eta &= 1 - \frac{\rho^\gamma - 1}{\gamma(\rho - 1)K^{\gamma-1}} \quad \text{(狄塞尔循环)}
+\end{align*}
+
+\subsection{焦耳-汤姆孙效应与制冷机}
+制冷系数
+\[
+\eta_{\text{冷}} = \frac{|Q_2|}{W} = \frac{|Q_2|}{|Q_1| - |Q_2|}
+\]
+
+卡诺制冷机
+\[
+\eta_{\text{卡冷}} = \frac{T_2}{T_1 - T_2}
+\]
+
+\section{第五章：热力学第二定律与熵}
+\subsection{热力学第二定律表述}
+开尔文表述：
+不能从单一热源吸热完全变功而不产生其他影响
+
+克劳修斯表述：
+热量不能自发从低温物体传到高温物体
+
+\subsection{卡诺定理}
+定理内容
+\begin{itemize}
+    \item 可逆热机效率只与热源温度有关
+    \item 不可逆热机效率不大于可逆热机
+\end{itemize}
+
+卡诺效率
+\[
+\eta_{\text{可逆}} = 1 - \frac{T_2}{T_1}
+\]
+
+\subsection{熵与熵增加原理}
+克劳修斯等式
+\[
+\oint \frac{dQ}{T} = 0 \quad \text{(可逆循环)}
+\]
+
+熵的定义
+\begin{align*}
+    dS &= \frac{dQ_{\text{可逆}}}{T} \\
+    \Delta S &= \int \frac{dQ_{\text{可逆}}}{T}
+\end{align*}
+
+熵增加原理
+\[
+(\Delta S)_{\text{绝热}} \geq 0
+\]
+
+热力学基本方程
+\[
+dU = TdS - pdV
+\]
+
+理想气体熵变
+\begin{align*}
+    \Delta S &= \int_{T_1}^{T_2} vC_{V,m}\frac{dT}{T} + vR\ln\frac{V_2}{V_1} \\
+    \Delta S &= \int_{T_1}^{T_2} vC_{p,m}\frac{dT}{T} - vR\ln\frac{p_2}{p_1}
+\end{align*}
+
+玻尔兹曼熵
+\[
+S = k\ln W
+\]
+
+不可逆过程熵变
+\begin{align*}
+    \Delta S &> 0 \quad \text{(不可逆过程)} \\
+    \Delta S &= vR\ln\frac{V_2}{V_1} \quad \text{(自由膨胀)} \\
+    \Delta S &= C_p\ln\frac{(T_1 + T_2)^2}{4T_1T_2} \quad \text{(热传导)}
+\end{align*}
+
+\section{常数与单位}
+\subsection{基本常数}
+\begin{align*}
+    R &= 8.31 \, \text{J·mol}^{-1}\text{·K}^{-1} \\
+    k &= 1.38 \times 10^{-23} \, \text{J·K}^{-1} \\
+    N_A &= 6.02 \times 10^{23} \, \text{mol}^{-1}
+\end{align*}
+
+\subsection{标准状况}
+\begin{align*}
+    T_0 &= 273.15 \, \text{K} \\
+    p_0 &= 1 \, \text{atm} = 1.013 \times 10^5 \, \text{Pa} \\
+    V_{m,0} &= 22.4 \times 10^{-3} \, \text{m}^3\text{·mol}^{-1}
+\end{align*}
+
+\section*{复习建议}
+\subsection{重点公式记忆}
+建议重点掌握理想气体物态方程、热力学第一定律、各种过程的功和热量计算、热机效率公式、熵变计算公式等。
+
+\subsection{典型题型练习}
+多做计算题，特别是涉及多个过程组合的题目，加强对公式应用的理解。
+
+\subsection{概念理解}
+重视对基本概念的理解，如平衡态、可逆过程、熵的物理意义等。
+
+\end{document}

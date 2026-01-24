@@ -1,0 +1,47 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\begin{document}
+本题可先根据圆柱体积公式建立容器体积与内外半径和高的函数关系，再利用全微分来近似计算容器体积，最后结合密度公式求出容器质量的近似值。
+
+步骤一：建立容器体积的函数表达式
+
+设圆柱形容器的内半径为 x ，内高为 y ，则容器的体积$ V(x,y)=\pi[(x + 0.01)^2(y + 0.02)-x^2y]$ ，展开可得：
+
+
+\begin{align*}
+V(x,y)&=\pi(x^2 y+0.02x^2 + 0.01xy+0.0002 - x^2 y)\\
+&=\pi(0.02x^2 + 0.01xy+0.0002)
+\end{align*}
+
+
+步骤二：求全微分$ dV $
+
+根据全微分公式 $$dV = V_xdx + V_ydy,$$ 分别对 V(x,y) 求关于 x 和 y 的偏导数：
+
+对 x 求偏导数 $V_x$ ：将 $y$ 看作常数，对 x 求导数，得到 $V_x = \pi(0.04x + 0.01y) $ 。
+
+所以全微分$ dV=\pi(0.04x + 0.01y)dx + 0.01\pi xdy$ 。
+
+步骤三：代入已知条件计算 dV 
+
+已知内半径 x = 4cm ，内高 y = 20cm ，壁的厚度 dx = 0.01cm ，底的厚度 dy = 0.02cm ，将这些值代入到全微分 dV 中：
+
+
+\begin{align*}
+dV&=\pi(0.04\times4 + 0.01\times20)\times0.01 + 0.01\pi\times4\times0.02\\
+&=\pi(0.16 + 0.2)\times0.01 + 0.0008\pi\\
+&=\pi\times0.36\times0.01 + 0.0008\pi\\
+&=0.0036\pi + 0.0008\pi\\
+&=0.0044\pi
+\end{align*}
+
+步骤四：计算容器质量的近似值
+
+根据密度公式 $\rho=\frac{m}{V} $（其中 $\rho$ 为密度，$ m$ 为质量，$ V$ 为体积），可得$ m = \rho V$ 。
+
+已知铜的密度 $\rho = 8.9g/cm^3$ ，由于$ dV\approx\Delta V $（ $\Delta V$ 为容器实际体积），则容器质量的近似值为：
+
+$ m\approx\rho dV = 8.9\times0.0044\pi\approx0.124(g) $
+
+综上，容器质量的近似值约为 0.124g 。
+\end{document}
